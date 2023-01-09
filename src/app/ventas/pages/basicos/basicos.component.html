@@ -1,0 +1,67 @@
+
+<h2>
+    Pipes Basicos
+</h2>
+<h3>Visulalización en cards</h3>
+<div class="grid">
+    <div class="col-6">
+
+        <p-card header="Upercase ">
+            1
+        </p-card>
+    </div>
+    <div class="col-6">
+        <p-card header="Upercase ">
+            1
+        </p-card>
+    </div>
+</div>
+
+<div class="grid">
+    <div class="col-6">
+        <p-card header="Fechas">
+            formato de fechas
+        </p-card>
+    </div>
+    
+    <div class="col-6">
+        <p-card header="Resultados">
+                {{date}}
+                {{date | date:'EEEE/MMMM/yyyy'}}
+                
+        </p-card>
+    </div>
+
+
+
+</div>
+<div class="grid">
+    <div class="col-6">
+        <p-card header="Pipe i18nSelect">
+            <p>
+                Cantidad: {{ personas.length | i18nPlural:cant }}
+            </p>
+            
+            <button type="button" (click)="quitar()" class="btn btn-primary">quitar</button>
+            <div>
+                <ul *ngFor="let invitado of personas">
+                    <li>
+                        {{invitado}}
+                    </li>
+                </ul>
+            </div>
+        </p-card>
+    </div>
+        
+    <div class="col-6">
+        <p-card header="Resultados">
+       <P>
+        Bienvenido {{ genero | i18nSelect:gen }} {{nombre}} 
+       </P>
+            <button type="button" (click)="cambiar()" class="btn btn-primary">cambiar</button>
+        </p-card>
+    </div>
+
+    
+
+</div>
